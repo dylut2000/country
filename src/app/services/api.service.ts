@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +11,8 @@ export class ApiService {
 
   constructor(private Http: HttpClient) { }
 
-  getCountries () {
+  getCountries (): Observable<any> {
     return this.Http.get(this.API_URL);
   }
-  
+
 }
