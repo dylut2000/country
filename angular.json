@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "mdBootstrapDylut": {
+    "countries": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/mdBootstrapDylut",
+            "outputPath": "dist/countries",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -71,18 +71,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "mdBootstrapDylut:build"
+            "browserTarget": "countries:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "mdBootstrapDylut:build:production"
+              "browserTarget": "countries:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "mdBootstrapDylut:build"
+            "browserTarget": "countries:build"
           }
         },
         "test": {
@@ -119,16 +119,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "mdBootstrapDylut:serve"
+            "devServerTarget": "countries:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "mdBootstrapDylut:serve:production"
+              "devServerTarget": "countries:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "mdBootstrapDylut"
+  "defaultProject": "countries"
 }
