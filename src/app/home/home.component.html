@@ -29,7 +29,7 @@
                     [(ngModel)]="name"
                     />
                     <div class="input-group-append">
-                      <span class="input-group-text hand hoverable" id="basic-addon2">
+                      <span class="input-group-text hand hoverable" id="basic-addon2" (click)="search()">
                         <mdb-icon fas icon="search" class=""></mdb-icon>
                       </span>
                     </div>
@@ -38,6 +38,11 @@
               </form>
             </div>
           </div>
+          <div *ngIf="selectedCountry">
+            <app-country [selectedCountry]="selectedCountry"></app-country>
+          </div>
+          
+
         </mdb-card-body>
       </mdb-card>
     </div>

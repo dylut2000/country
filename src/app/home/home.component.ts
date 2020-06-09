@@ -44,7 +44,7 @@ export class HomeComponent implements OnInit {
       this.borders.push(this.getBorderName(alpha3Code));
     });
 
-    console.log(this.borders);
+    //console.log(this.borders);
   }
 
   getBorderName(alpha3Code) {
