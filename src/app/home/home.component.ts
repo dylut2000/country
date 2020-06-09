@@ -35,9 +35,41 @@ export class HomeComponent implements OnInit {
     this.countries = JSON.parse(localStorage.getItem("countries"));
   }
 
+  onSelectedCountry(country) {
+    //console.log(country);
+    this.selectedCountry = country;
+    this.name = country.name;
 
+    country.borders.forEach(alpha3Code => {
+      this.borders.push(this.getBorderName(alpha3Code));
+    });
 
-  onSelectedCountry (event) {
-    console.log(event);
+    console.log(this.borders);
+  }
+
+  getBorderName(alpha3Code) {
+    return this.countries.filter(
+      country => country.alpha3Code == alpha3Code
+    )[0];
+  }
+
+  search(): void {
+    let nameArray = this.name.split(" ");
+    let name = "";
+
+    for (let i = 0; i < nameArray.length; i++) {
+      name += this.format_string(nameArray[i]) + " ";
+    }
+
+    this.name = name.trim();
+
+    this.selectedCountry = this.countries.filter(
+      country => country.name === this.name
+    )[0];
+  }
+
+  format_string(str: string): string {
+    let name = str.toLowerCase();
+    return name.charAt(0).toUpperCase() + name.slice(1);
   }
 }
