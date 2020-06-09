@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-country-list',
@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CountryListComponent implements OnInit {
 
+  @Input('countries') countries: any;
+  @Output() onSelectedCountry = new EventEmitter()
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+
+
+  getCountry (country) {
+    this.onSelectedCountry.emit(country);
   }
 
 }

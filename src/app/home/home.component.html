@@ -1,5 +1,16 @@
 <div class="container">
 
-  <h1>Country app</h1>
+  <div class="row">
+
+    <div class="col-md-3 d-none d-md-block scroll">
+      <app-country-list  [countries]="countries" (onSelectedCountry)="onSelectedCountry($event)"></app-country-list>
+    </div>
+
+    <div class="col-md-9 yellow">
+        Screen
+    </div>
+
+  </div>
+  
 
 </div>

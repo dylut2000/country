@@ -22,9 +22,9 @@ export class HomeComponent implements OnInit {
     // check if countries exists in storage
     if (!localStorage.getItem("countries")) {
       // get countries from country service
-      this.apiService.getCountries().subscribe(data => {
+      this.apiService.getCountries().subscribe(countries => {
         // store server data into countries
-        this.countries = data;
+        this.countries = countries;
         // store stringyfied data into local storage
         localStorage.setItem("countries", JSON.stringify(this.countries));
       });
@@ -33,5 +33,11 @@ export class HomeComponent implements OnInit {
 
     // parse data from storage then store it to countries
     this.countries = JSON.parse(localStorage.getItem("countries"));
+  }
+
+
+
+  onSelectedCountry (event) {
+    console.log(event);
   }
 }

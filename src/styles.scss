@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+.hand {
+    cursor: pointer;
+  }
+  
+  .scroll {
+    height: 80vh;
+    width: 100%;
+    overflow: scroll !important;
+    padding: 5px;
+  }
