@@ -67,7 +67,7 @@ export class HomeComponent implements OnInit {
       )[0];
 
       if (!this.selectedCountry) {
-        this.toastr.warning(`${this.name} it's not a country`, "Ftsssek man!");
+        this.toastr.warning(`${this.name} it's not a country`, "");
       }
       return;
     }
