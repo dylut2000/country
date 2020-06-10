@@ -37,6 +37,7 @@ export class HomeComponent implements OnInit {
 
   onSelectedCountry(country) {
     //console.log(country);
+    this.borders = [];
     this.selectedCountry = country;
     this.name = country.name;
 
