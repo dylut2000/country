@@ -31,13 +31,11 @@ export class HomeComponent implements OnInit {
       });
       return;
     }
-
     // parse data from storage then store it to countries
     this.countries = JSON.parse(localStorage.getItem("countries"));
   }
 
   onSelectedCountry(country) {
-    //console.log(country);
     this.borders = [];
     this.selectedCountry = country;
     this.name = country.name;
@@ -45,8 +43,6 @@ export class HomeComponent implements OnInit {
     country.borders.forEach(alpha3Code => {
       this.borders.push(this.getBorderName(alpha3Code));
     });
-
-    //console.log(this.borders);
   }
 
   getBorderName(alpha3Code) {
@@ -70,8 +66,8 @@ export class HomeComponent implements OnInit {
         country => country.name === this.name
       )[0];
 
-      if(!this.selectedCountry) {
-        this.toastr.warning(`Ftsssek! ${this.name} is not a country`, "Sorry");
+      if (!this.selectedCountry) {
+        this.toastr.warning(`${this.name} it's not a country`, "Ftsssek man!");
       }
       return;
     }
@@ -82,5 +78,11 @@ export class HomeComponent implements OnInit {
   format_string(str: string): string {
     let name = str.toLowerCase();
     return name.charAt(0).toUpperCase() + name.slice(1);
+  }
+
+
+  onSelectBorderCountry(country) {
+    this.name = country.name;
+    this.selectedCountry = country;
   }
 }

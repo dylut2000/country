@@ -2,10 +2,7 @@
   <div class="row">
     <div class="col-md-3 d-none d-md-block mt-5">
       <div class="scroll">
-        <app-country-list
-          [countries]="countries"
-          (onSelectedCountry)="onSelectedCountry($event)"
-        ></app-country-list>
+        <app-country-list [countries]="countries" (onSelectedCountry)="onSelectedCountry($event)"></app-country-list>
       </div>
     </div>
 
@@ -16,18 +13,10 @@
             <div class="col-md-6 mx-auto text-center">
               <form>
                 <div class="form-row">
-                  
+
                   <div class="input-group mb-3">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Country Name"
-                      aria-label="Country Name"
-                      aria-describedby="basic-addon2"
-                      id="country"
-                      name="name"
-                    [(ngModel)]="name"
-                    />
+                    <input type="text" class="form-control" placeholder="Country Name" aria-label="Country Name"
+                      aria-describedby="basic-addon2" id="country" name="name" [(ngModel)]="name" />
                     <div class="input-group-append">
                       <span class="input-group-text hand hoverable" id="basic-addon2" (click)="search()">
                         <mdb-icon fas icon="search" class=""></mdb-icon>
@@ -38,10 +27,13 @@
               </form>
             </div>
           </div>
+
           <div *ngIf="selectedCountry">
-            <app-country [selectedCountry]="selectedCountry" [borders]="borders"></app-country>
+            <app-country [selectedCountry]="selectedCountry" [borders]="borders" (onSelectBorderCountry)="onSelectBorderCountry($event)"></app-country>
           </div>
-          
+          <div *ngIf="!selectedCountry">
+              <h3 class="text-muted text-center mt-5">Findout more about countries</h3>
+            </div>
 
         </mdb-card-body>
       </mdb-card>

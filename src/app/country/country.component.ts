@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-country',
@@ -9,12 +9,16 @@ export class CountryComponent implements OnInit {
 
   @Input('selectedCountry') selectedCountry: any;
   @Input('borders') borders: any;
+  @Output() onSelectBorderCountry = new EventEmitter()
 
   constructor() { }
 
   ngOnInit() {
-    console.log(this.selectedCountry);
-    console.log(this.borders)
+  }
+
+
+  selectBorderCountry(country) {
+    this.onSelectBorderCountry.emit(country);
   }
 
 }
