@@ -1,7 +1,8 @@
 # BootstrapDylut
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8
-And it using [Material Design for Bootstrap](https://mdbootstrap.com/docs/angular/)
+And it using [Material Design for Bootstrap](https://mdbootstrap.com/docs/angular/)<br>
+## Add a Stars if you like this simple [DEMO](https://country.dylut2000.now.sh/home) training
 
 ## How it works
 

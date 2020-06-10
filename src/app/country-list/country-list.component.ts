@@ -1,24 +1,19 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
-  selector: 'app-country-list',
-  templateUrl: './country-list.component.html',
-  styleUrls: ['./country-list.component.scss']
+  selector: "app-country-list",
+  templateUrl: "./country-list.component.html",
+  styleUrls: ["./country-list.component.scss"]
 })
 export class CountryListComponent implements OnInit {
+  @Input("countries") countries: any;
+  @Output() onSelectedCountry = new EventEmitter();
 
-  @Input('countries') countries: any;
-  @Output() onSelectedCountry = new EventEmitter()
+  constructor() {}
 
-  constructor() { }
+  ngOnInit() {}
 
-  ngOnInit() {
-  }
-
-
-
-  getCountry (country) {
+  getCountry(country) {
     this.onSelectedCountry.emit(country);
   }
-
 }

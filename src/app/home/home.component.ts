@@ -80,7 +80,6 @@ export class HomeComponent implements OnInit {
     return name.charAt(0).toUpperCase() + name.slice(1);
   }
 
-
   onSelectBorderCountry(country) {
     this.name = country.name;
     this.selectedCountry = country;

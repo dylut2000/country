@@ -1,7 +1,9 @@
 <ul class="list-group">
-  <li class="list-group-item hand hoverable" *ngFor="let country of countries" (click)="getCountry(country)">
+  <li
+    class="list-group-item hand hoverable"
+    *ngFor="let country of countries"
+    (click)="getCountry(country)"
+  >
     {{ country.name }}
   </li>
 </ul>
-
-

@@ -1,13 +1,11 @@
-@import '~ngx-toastr/toastr';
+@import "~ngx-toastr/toastr";
 
 .hand {
-    cursor: pointer;
-  }
-  
-  .scroll {
-    height: 80vh;
-    width: 100%;
-    overflow: scroll !important;
-  }
+  cursor: pointer;
+}
 
-  
+.scroll {
+  height: 80vh;
+  width: 100%;
+  overflow: scroll !important;
+}
