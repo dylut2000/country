@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ApiService } from "../services/api.service";
+import { ToastrService } from "ngx-toastr";
 
 @Component({
   selector: "app-home",
@@ -12,7 +13,7 @@ export class HomeComponent implements OnInit {
   name: string;
   borders = [];
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private toastr: ToastrService) {}
 
   ngOnInit() {
     this.getCountries();
@@ -55,18 +56,27 @@ export class HomeComponent implements OnInit {
   }
 
   search(): void {
-    let nameArray = this.name.split(" ");
-    let name = "";
+    if (this.name) {
+      let nameArray = this.name.split(" ");
+      let name = "";
 
-    for (let i = 0; i < nameArray.length; i++) {
-      name += this.format_string(nameArray[i]) + " ";
+      for (let i = 0; i < nameArray.length; i++) {
+        name += this.format_string(nameArray[i]) + " ";
+      }
+
+      this.name = name.trim();
+
+      this.selectedCountry = this.countries.filter(
+        country => country.name === this.name
+      )[0];
+
+      if(!this.selectedCountry) {
+        this.toastr.warning(`Ftsssek! ${this.name} is not a country`, "Sorry");
+      }
+      return;
     }
 
-    this.name = name.trim();
-
-    this.selectedCountry = this.countries.filter(
-      country => country.name === this.name
-    )[0];
+    this.toastr.error("Country name is required!", "Error");
   }
 
   format_string(str: string): string {

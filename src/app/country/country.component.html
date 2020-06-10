@@ -1,52 +1,57 @@
 <div class="row mt-3">
-        <div class="col-md-4">
-                <div class="view overlay zoom">
-                        <img src={{selectedCountry.flag}} class="img-fluid img-thumbnail" alt="zoom">
-                        <div class="mask flex-center waves-effect waves-light">
-                          <!-- <p class="purple-text">{{selectedCountry.name}}</p> -->
-                        </div>
-                      </div>
-        </div>
-        <div class="col-md-8">
-                <h3 class="h3-responsive text-center">{{selectedCountry.name}}</h3>
-                <br>
+  <div class="col-md-4">
+    <div class="view overlay zoom">
+      <img
+        src="{{ selectedCountry.flag }}"
+        class="img-fluid img-thumbnail"
+        alt="zoom"
+      />
+      <div class="mask flex-center waves-effect waves-light">
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <h3 class="h3-responsive text-center">{{ selectedCountry.name }}</h3>
+    <br />
 
-                <table mdbTable hover="true">
-                  <tbody>
-                    <tr mdbTableCol>
-                      <th>Capital</th>
-                      <td>{{selectedCountry.capital}}</td>
-                    </tr>
-                    <tr mdbTableCol>
-                      <th>Population</th>
-                      <td>{{selectedCountry.population}}</td>
-                    </tr>
-                    <tr mdbTableCol>
-                      <th>Languages</th>
-                      <td>
-                        <p *ngFor="let language of selectedCountry.languages">
-                            <span *ngIf="language.name">{{language.name}}</span>
-                        </p>
-                      </td>
-                    </tr>
-                    <tr mdbTableCol>
-                      <th>Currencies</th>
-                      <td>
-                        <p *ngFor="let currency of selectedCountry.currencies">
-                            <span *ngIf="currency.name">{{currency.name}}</span>
-                        </p>
-                      </td>
-                    </tr>
-                    
-                    <tr mdbTableCol *ngIf="borders.length > 0">
-                      <th>Borders</th>
-                      <td>
-                        <ul>
-                          <li *ngFor="let country of borders" class="hand">{{country.name}}</li>
-                        </ul>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-          </div>
+    <table mdbTable hover="true">
+      <tbody>
+        <tr mdbTableCol>
+          <th>Capital</th>
+          <td>{{ selectedCountry.capital }}</td>
+        </tr>
+        <tr mdbTableCol>
+          <th>Population</th>
+          <td>{{ selectedCountry.population }}</td>
+        </tr>
+        <tr mdbTableCol>
+          <th>Languages</th>
+          <td>
+            <p *ngFor="let language of selectedCountry.languages">
+              <span *ngIf="language.name">{{ language.name }}</span>
+            </p>
+          </td>
+        </tr>
+        <tr mdbTableCol>
+          <th>Currencies</th>
+          <td>
+            <p *ngFor="let currency of selectedCountry.currencies">
+              <span *ngIf="currency.name">{{ currency.name }}</span>
+            </p>
+          </td>
+        </tr>
+
+        <tr mdbTableCol *ngIf="borders.length > 0">
+          <th>Borders</th>
+          <td>
+            <ul>
+              <li *ngFor="let country of borders" class="hand">
+                {{ country.name }}
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
