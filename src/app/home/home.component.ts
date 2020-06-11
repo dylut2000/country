@@ -84,4 +84,5 @@ export class HomeComponent implements OnInit {
     this.name = country.name;
     this.selectedCountry = country;
   }
+  
 }
